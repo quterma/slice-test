@@ -19,7 +19,7 @@ export type TableRow = {
 };
 
 export const getData = (pageNumber: number = 0, limit: number): Promise<TableRow[]> => {
-	return delay(200).then(() => table.slice(pageNumber * limit, pageNumber * limit + limit));
+	return delay(1000).then(() => table.slice(pageNumber * limit, pageNumber * limit + limit));
 };
 
 export const addRow = () => {};
