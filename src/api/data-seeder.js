@@ -12,7 +12,7 @@ const createTable = numRows => {
 			date: "01/01/22",
 			prefix: "OC",
 		})
-		.map(row => ({ ...row, status: statuses[Math.floor(Math.random() * statuses.length)] }));
+		.map((row, id) => ({ ...row, id, status: statuses[Math.floor(Math.random() * statuses.length)] }));
 };
 
 fs.writeFile("src/api/table.json", JSON.stringify(createTable(200)), "utf8", err => {

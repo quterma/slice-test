@@ -1,5 +1,14 @@
+// import { Layout } from "antd";
+// import { Sidebar } from "./components/sidebar/sidebar";
+import { Table } from "./components/table/table";
+
 function App() {
-	return <div className="App"></div>;
+	return (
+		// <Layout style={{ minHeight: "100vh" }}>
+		// 	<Sidebar />
+		<Table />
+		// </Layout>
+	);
 }
 
 export default App;

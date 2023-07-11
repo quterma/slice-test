@@ -1,3 +1,4 @@
+import { delay } from "../helpers/helpers";
 import table from "./../api/table.json";
 
 export enum Statuses {
@@ -7,6 +8,7 @@ export enum Statuses {
 }
 
 export type TableRow = {
+	id: number;
 	geo: string;
 	certificates: string;
 	source: string;
@@ -16,8 +18,8 @@ export type TableRow = {
 	status: string;
 };
 
-export const getData = (pageNumber: number = 0, limit: number = 30): TableRow[] => {
-	return table.slice(pageNumber * limit, pageNumber * limit + limit);
+export const getData = (pageNumber: number = 0, limit: number): Promise<TableRow[]> => {
+	return delay(200).then(() => table.slice(pageNumber * limit, pageNumber * limit + limit));
 };
 
 export const addRow = () => {};
